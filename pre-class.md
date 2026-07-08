@@ -48,7 +48,20 @@ Use the same email address you used to sign up for GitHub.
 
 ---
 
-### 4. Watch This Short Video (Recommended)
+### 4. Sign in to GitHub inside VS Code ahead of time
+
+*This saves you a hiccup during class.*
+
+1. Open **VS Code**.
+2. Click the **account icon** (the little circle at the bottom-left of the window).
+3. Choose **Sign in with GitHub**.
+4. A browser window will open — click the green **Authorize** button and return to VS Code.
+
+Think of it like logging into Gmail once so it remembers you — your first "push" in class won't stop to ask who you are.
+
+---
+
+### 5. Watch This Short Video (Recommended)
 
 [Git & GitHub Zero to Hero](https://youtu.be/1I79WAZ4uSU) — about 15 minutes
 
@@ -56,7 +69,7 @@ This gives you a visual introduction to Git before class. Don't worry if not eve
 
 ---
 
-### 5. Optional: Install the "Open in Colab" Chrome Extension
+### 6. Optional: Install the "Open in Colab" Chrome Extension
 
 If you use Google Chrome, you can install this extension to open notebooks from GitHub directly in Google Colab:
 
@@ -82,4 +95,5 @@ The session is designed for beginners. If you can use a web browser and save a f
 - [ ] Git installed (`git --version` works in terminal)
 - [ ] VS Code installed and opens on your computer
 - [ ] Git configured with your name and email
+- [ ] Signed in to GitHub inside VS Code (account icon, bottom-left)
 - [ ] Watched the intro video *(recommended)*

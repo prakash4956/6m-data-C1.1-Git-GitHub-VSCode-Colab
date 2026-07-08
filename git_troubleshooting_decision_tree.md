@@ -73,12 +73,16 @@ Problem: "fatal: remote origin already exists"
 Problem: "Permission denied" or "401 Unauthorized" when pushing
     ↓
 → GitHub couldn't verify who you are.
-  Solution:
+  Solution (recommended — browser sign-in):
     1. Make sure you're using HTTPS (not SSH). Your URL should start with https://
-    2. When VS Code or the terminal asks for a username/password,
+    2. In VS Code, click the account icon (bottom-left circle) → "Sign in with GitHub",
+       then approve in the browser window that opens. Try pushing again.
+
+  Only if browser sign-in fails (fallback — Personal Access Token):
+    3. When VS Code or the terminal asks for a username/password,
        use your GitHub username and a Personal Access Token (not your password).
        You can create one at: github.com → Settings → Developer settings → Personal access tokens
-    3. If still stuck, ask your instructor.
+    4. If still stuck, ask your instructor.
 ```
 
 ---

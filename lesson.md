@@ -74,6 +74,8 @@ You use Git *locally* (on your computer), and GitHub *remotely* (in the cloud).
 | **Commit** | A saved snapshot with a label describing what changed |
 | **Push** | Sending your snapshots from your computer up to GitHub |
 | **Pull** | Downloading the latest snapshots from GitHub to your computer |
+| **Clone** | Making your own full copy of a GitHub project onto your computer, like downloading a shared Google Doc to edit offline |
+| **Branch** | A safe side-copy of your project to try changes without touching the main version, like "Save As" a draft before editing the original |
 
 ---
 
@@ -148,7 +150,7 @@ Now the project is on your computer. You can edit it locally, then push changes 
 1. On your new GitHub repository page, click the green **Code** button.
 2. Make sure **HTTPS** is selected. Copy the URL (it looks like `https://github.com/yourname/my-learning-journal.git`).
 3. Open **VS Code**.
-   - *Windows users:* Click the blue "Open a Remote Window" button at the bottom-left, then connect to WSL if prompted.
+   - *Windows users:* Click the blue "Open a Remote Window" button at the bottom-left. WSL is a small Linux workspace inside Windows — you set it up in [Lesson 1.0 (Welcome & Onboarding)](../6m-data-1.0-Welcome-Onboarding/); if the blue button offers **Connect to WSL**, click it.
 4. Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to open the Command Palette.
 5. Type **Git: Clone** and select it.
 6. Paste the URL you copied.
@@ -175,6 +177,8 @@ Now the project is on your computer. You can edit it locally, then push changes 
 3. **Stage:** Hover over `notes.txt` and click the **+** button. It moves to **Staged Changes**.
 4. **Commit:** Type a message in the box at the top, for example: `Add my first notes`. Then click the **✔ Commit** button (or press `Ctrl+Enter`).
 5. **Push:** Click the **Sync Changes** button (or the cloud icon at the bottom of the screen).
+
+> 💡 If a browser window pops up asking you to authorise GitHub, that's normal — click the green **Authorize** button and come back. (VS Code is just proving it's really you.)
 
 ✅ Go to your GitHub repository and refresh the page — you should see `notes.txt` there!
 
