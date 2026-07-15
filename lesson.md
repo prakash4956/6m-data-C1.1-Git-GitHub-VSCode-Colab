@@ -1,6 +1,6 @@
 # Version Control Made Simple: Git, GitHub & VS Code
 
-**Duration:** 1.5 Hours (90 minutes)
+**Duration:** ~1 Hour 50 Minutes (110 minutes)
 
 **Format:** 30% Concepts / 70% Hands-on Practice
 
@@ -30,7 +30,8 @@ By the end of this session, you will be able to:
 | **0:15 – 0:30** | Module 2: Local vs. Remote | Concepts + Demo (15 min) |
 | **0:30 – 0:55** | Exercise A: Your First Repository & Commit | Hands-on (25 min) |
 | **0:55 – 1:20** | Exercise B: Make Changes & Stay in Sync | Hands-on (25 min) |
-| **1:20 – 1:30** | Module 3: What is Colab? + Wrap Up | Concepts (10 min) |
+| **1:20 – 1:40** | Exercise C: Team Collaboration (Group) | Hands-on (20 min) |
+| **1:40 – 1:50** | Module 3: What is Colab? + Wrap Up | Concepts (10 min) |
 
 ---
 
@@ -226,6 +227,41 @@ Sometimes a colleague (or your future self on another computer) will make a chan
 ### The Golden Rule
 
 > **Always Pull before you Push.** When you work with others (or across multiple computers), always pull the latest changes before making your own. This avoids conflicts.
+
+---
+
+## 👥 Exercise C: Team Collaboration (Group Exercise)
+
+*Goal: Practice the real-world collaboration workflow — owner creates repo, invites collaborators, collaborators submit PRs, owner reviews and merges.*
+
+Form groups of 3–4. One person is the **Repo Owner**, the rest are **Collaborators**.
+
+### Step 1 — Owner: Create the Repo
+
+1. Owner creates a **new public repository** on GitHub (e.g. `team-practice-repo`), with a README.
+2. Go to **Settings** → **Collaborators** → **Add people** → invite each teammate by GitHub username or email.
+
+### Step 2 — Collaborators: Accept & Clone
+
+1. Each collaborator accepts the invite (check email or GitHub notifications).
+2. Clone the repo in VS Code (`Ctrl+Shift+P` → **Git: Clone**).
+
+### Step 3 — Collaborators: Make a Branch & Open a PR
+
+1. Create a new branch (e.g. `add-yourname-notes`).
+2. Add or edit a file (e.g. add a line with your name to `README.md`).
+3. Stage → Commit → Push the branch.
+4. On GitHub, open a **Pull Request** from your branch into `main`.
+
+### Step 4 — Owner: Review & Merge
+
+1. Owner opens each **Pull Request** on GitHub.
+2. Check the **Files changed** tab — review quality (clear commit message, no broken content, follows instructions).
+3. Leave a comment if changes are needed; otherwise click **Merge pull request**.
+
+✅ Repeat until every collaborator's PR is merged. The `main` branch should now contain everyone's contributions.
+
+> 💡 This mirrors real teamwork: collaborators never push straight to `main` — they propose changes via PR, and the owner (or a reviewer) gate-keeps quality before merging.
 
 ---
 
