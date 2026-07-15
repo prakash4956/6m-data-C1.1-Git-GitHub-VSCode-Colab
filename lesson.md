@@ -28,7 +28,8 @@ By the end of this session, you will be able to:
 |------|----------|------|
 | **0:00 – 0:15** | Module 1: What is Git & GitHub? | Concepts (15 min) |
 | **0:15 – 0:30** | Module 2: Local vs. Remote | Concepts + Demo (15 min) |
-| **0:30 – 0:55** | Exercise A: Your First Repository & Commit | Hands-on (25 min) |
+| **0:30 – 0:33** | Setup Check (verify everyone's tools work) | Checkpoint (3 min) |
+| **0:33 – 0:55** | Exercise A: Your First Repository & Commit | Hands-on (22 min) |
 | **0:55 – 1:25** | Exercise B: Make Changes, Stay in Sync & Resolve a Conflict | Hands-on (30 min) |
 | **1:25 – 1:40** | Exercise C: Pair Collaboration | Hands-on (15 min) |
 | **1:40 – 1:50** | Module 3: What is Colab? + Self-Check + Wrap Up | Concepts (10 min) |
@@ -36,6 +37,8 @@ By the end of this session, you will be able to:
 ---
 
 ## 📘 Module 1: What is Git & GitHub? (15 mins)
+
+> **Instructor note:** open with a 2-minute recap of the pre-class video ([Git & GitHub Zero to Hero](https://youtu.be/1I79WAZ4uSU)) and a quick "what stuck / what confused you?" — don't assume everyone watched it.
 
 ### The Problem Git Solves
 
@@ -102,7 +105,7 @@ Your Computer (Local)          GitHub (Remote)
 
 ### The Three-Zone Mental Model (Inside VS Code)
 
-When you make a change in VS Code, it goes through three stages before reaching GitHub:
+Your change passes through **three zones** on your computer — Working Files → Staging → Commit — and then a fourth action, **Push**, sends it to GitHub:
 
 ```
 [1] Working Files  →  [2] Staging Area  →  [3] Local Commit  →  GitHub
@@ -115,6 +118,8 @@ When you make a change in VS Code, it goes through three stages before reaching 
 4. **Push** — You send the snapshot up to GitHub.
 
 > **Analogy:** Think of it like packing a suitcase. You lay out clothes (Working Files), choose what to pack (Staging), zip up the suitcase (Commit), then check it in at the airport (Push).
+
+> ⚠️ **About the "Sync Changes" button:** VS Code bundles **Pull then Push into one click** called *Sync Changes*. Handy, but remember they're still two separate directions — **Push** sends your work up, **Pull** brings others' work down. The cheatsheet shows them as separate `git push` / `git pull` so you keep the two directions clear in your head.
 
 ### Demo: Cloning a Repository
 
@@ -129,7 +134,20 @@ Now the project is on your computer. You can edit it locally, then push changes 
 
 ---
 
-## 💻 Exercise A: Your First Repository & Commit (25 mins)
+## ✅ Setup Check (3 mins — do this before Exercise A)
+
+*Don't skip this. It catches broken setups now, instead of 40 minutes into the exercise. If any item is ❌, flag an instructor/TA before continuing — the rest of the class depends on these working.*
+
+- [ ] **Git installed** — VS Code terminal (`` Ctrl+` `` / `` Cmd+` ``), type `git --version`, see `git version 2.x.x`
+- [ ] **Name/email set** — type `git config --global --list`, see your `user.name` and `user.email`
+- [ ] **Signed into GitHub in VS Code** — click the account icon (bottom-left circle); it should show your GitHub username
+- [ ] **You can log in to github.com** in a browser
+
+> **Instructor note:** GitHub redesigns its UI often. Before class, click through the exercise once and confirm button names/locations below still match ("+ icon", "green Code button", "pencil icon", "Settings → Collaborators").
+
+---
+
+## 💻 Exercise A: Your First Repository & Commit (22 mins)
 
 *Goal: Create a GitHub repository and make your first commit using VS Code.*
 
@@ -144,21 +162,25 @@ Now the project is on your computer. You can edit it locally, then push changes 
    - **Check the box:** ✅ Add a README file
 4. Click **Create repository**.
 
+> ⚠️ **"Public" means anyone on the internet can read this repo.** That's fine for practice notes — but never put passwords, personal data, or private work in a public repo.
+
 ✅ You now have a repository on GitHub! Notice the `README.md` file that was created automatically.
 
 ### Step 2 — Clone It to Your Computer
 
 1. On your new GitHub repository page, click the green **Code** button.
-2. Make sure **HTTPS** is selected. Copy the URL (it looks like `https://github.com/yourname/my-learning-journal.git`).
+2. Make sure **HTTPS** is selected. Copy the URL — it looks like `https://github.com/yourname/my-learning-journal.git`, but with **your actual GitHub username** in place of `yourname` (don't type "yourname" literally).
 3. Open **VS Code**.
-   - *Windows users:* if you set up WSL in pre-class, click **Connect to WSL** on the blue remote-window button (bottom-left) first.
+   - *Windows users:* if you set up WSL in pre-class, click **Connect to WSL** on the blue remote-window button (bottom-left) first. ⚠️ Once connected, your files live **inside WSL (a Linux workspace), not in normal Windows folders** — so reopen them through VS Code, not Windows File Explorer.
 4. Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to open the Command Palette.
 5. Type **Git: Clone** and select it.
 6. Paste the URL you copied.
-7. Choose a folder on your computer (e.g., your Documents folder).
+7. Choose **one folder you'll remember** — e.g. make a `GitHub` folder inside Documents and always clone there. Write down where you put it.
 8. When prompted, click **Open Repository**.
 
 ✅ Your repository is now on your computer and open in VS Code!
+
+> 💡 **Next time you want this project back:** don't re-clone it. Open VS Code → **File → Open Recent** (or **Open Folder** → the folder from step 7). Re-cloning makes confusing duplicates.
 
 ### Step 3 — Create Your First File
 
@@ -178,10 +200,16 @@ Now the project is on your computer. You can edit it locally, then push changes 
 3. **Stage:** Hover over `notes.txt` and click the **+** button. It moves to **Staged Changes**.
 4. **Commit:** Type a message in the box at the top, for example: `Add my first notes`. Then click the **✔ Commit** button (or press `Ctrl+Enter`).
 5. **Push:** Click the **Sync Changes** button (or the cloud icon at the bottom of the screen).
-
-> 💡 If a browser window pops up asking you to authorise GitHub, that's normal — click the green **Authorize** button and come back. (VS Code is just proving it's really you.)
+6. **Authorize GitHub (first push only):** A browser window will likely pop up asking you to authorise GitHub. This is expected — it's the #1 spot beginners get stuck.
+   - Click the green **Authorize** button.
+   - **Then return to VS Code** — the push finishes back in VS Code, not the browser.
+   - If push still fails with "Permission denied" or nothing happens, see `git_troubleshooting_decision_tree.md` → *"Permission denied / 401 Unauthorized"*, or ask an instructor.
 
 ✅ Go to your GitHub repository and refresh the page — you should see `notes.txt` there!
+
+> 🏃 **Finished early?** Add a second file (e.g. `about-me.txt`), then stage, commit, and push it too. In the VS Code terminal, try `git log --oneline` to see your commit history.
+>
+> **Instructor note:** learners move at very different speeds here. Watch for anyone silently stuck — a stalled clone or failed push is easy to hide. Circulate rather than waiting for hands.
 
 ---
 
@@ -255,6 +283,8 @@ Sometimes the same line gets changed in two places before you can pull. Git can'
 
 Pair up with one classmate. One of you is the **Repo Owner**, the other is the **Collaborator**.
 
+> **Instructor note:** pair a confident learner with a slower one — in a pair, one broken setup blocks *both* people. Also: collaborator invites arrive by email/notification and can lag a minute or two; send them at the very start of this exercise so acceptance isn't the bottleneck.
+
 ### Step 1 — Owner: Create the Repo & Add Collaborator
 
 1. Owner creates a **new public repository** on GitHub (e.g. `pair-practice-repo`), with a README.
@@ -310,6 +340,7 @@ Your notebook (`.ipynb` file) will appear in your GitHub repository — just lik
    ```
 4. Run it with **Shift + Enter**
 5. Go to **File** → **Save a copy in GitHub** → select `my-learning-journal` → write a commit message → click **OK**
+   - 💡 The first time, Colab asks to **authorize GitHub** — this is a *separate* permission from the one you gave VS Code. Click **Authorize** in the popup and continue.
 6. Refresh your GitHub repository — the `.ipynb` file should be there!
 
 ---
