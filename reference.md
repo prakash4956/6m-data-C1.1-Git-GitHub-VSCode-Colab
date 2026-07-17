@@ -1,3 +1,21 @@
+## GitHub Flow
+
+https://docs.github.com/en/get-started/using-github/github-flow
+
+---
+
+## Git Cheat Sheet
+
+https://git-scm.com/cheat-sheet
+
+---
+
+## How to use Git in VS Code
+
+https://code.visualstudio.com/docs/sourcecontrol/quickstart
+
+---
+
 ## Colab Cheat Sheet
 
 If you want to clone a repo and then open the notebooks inside it, the best way is to clone the repo into your Google Drive first.
